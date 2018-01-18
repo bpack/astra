@@ -8,6 +8,7 @@ name = "pypi"
 [packages]
 
 flask = "*"
+"flup6" = "*"
 
 
 [dev-packages]

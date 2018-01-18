@@ -1,5 +1,6 @@
 import os
 
+from datetime import datetime
 from flask import Flask
 from . import config
 
@@ -13,6 +14,10 @@ def create_app(env_name=None):
     @app.route('/')
     def index():
         return app.config['ASTRA_MESSAGE']
+
+    @app.route('/time')
+    def current_time():
+        return str(datetime.now())
 
     return app
 

@@ -1,0 +1,17 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/benjami8/projects/astra"
+PassengerBaseURI "/astra"
+PassengerPython "/home/benjami8/virtualenv/projects_astra/3.5/bin/python3.5"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+
+# Serve static content
+#RewriteCond %{REQUEST_URI} /static/^
+#RewriteCond /home/benjami8/api_benjaminpack_com/astra/%{REQUEST_URI} -f
+#RewriteRule ^ astra/$1 [L]
+
+Options +ExecCGI
+AddHandler fcgid-script .fcgi
+RewriteEngine on
+# The following lines are for FastCGI:
+RewriteCond %{REQUEST_FILENAME} !=/home/benjami8/api_benjaminpack_com/astra/astra.fcgi
+RewriteRule ^(.*)$ astra.fcgi/$1 [QSA,L]
