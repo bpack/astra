@@ -4,8 +4,6 @@ from datetime import datetime
 from flask import Flask, jsonify, abort, make_response, request, url_for
 from . import config
 
-
-
 def create_app(env_name=None):
     app = Flask(__name__, instance_relative_config=True)
 
