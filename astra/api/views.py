@@ -36,9 +36,12 @@ def create_user():
     if not request.json:
         abort(400)
     
-    u = User(request.json['username'], request.json['email'])
-    db.session.add(u)
-    db.session.commit()
+    try:
+        u = User(request.json['username'], request.json['email'])
+        db.session.add(u)
+        db.session.commit()
+    except:
+        return abort(400)
 
     return jsonify(u.map()), 201
 
