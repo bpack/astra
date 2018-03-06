@@ -6,7 +6,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config:
     DEBUG = False
     ASTRA_MESSAGE = 'Astra is running'
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'astra.sqlite')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'astra.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class TestConfiguration(Config):
